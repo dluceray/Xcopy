@@ -151,7 +151,7 @@ internal static class Program
 
     private sealed class AutoCloseDialog : Form
     {
-        private readonly Timer _timer;
+        private readonly System.Windows.Forms.Timer _timer;
         private int _remainingSeconds;
         private readonly Label _countdownLabel;
 
@@ -194,7 +194,7 @@ internal static class Program
             Controls.Add(_countdownLabel);
             Controls.Add(messageLabel);
 
-            _timer = new Timer { Interval = 1000 };
+            _timer = new System.Windows.Forms.Timer { Interval = 1000 };
             _timer.Tick += (_, _) => TickCountdown();
             UpdateCountdownText();
             _timer.Start();
